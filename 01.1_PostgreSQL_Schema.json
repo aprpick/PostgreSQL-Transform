@@ -1,0 +1,751 @@
+{
+  "01_Assessor_-_Parcel_Sales_2023_2025.csv": {
+    "pin": {
+      "type": "CODE",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "note": ""
+      }
+    },
+    "year": {
+      "type": "NUMERIC",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "leading_zeros": true,
+        "note": ""
+      }
+    },
+    "township_code": {
+      "type": "CODE",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "note": ""
+      }
+    },
+    "neighborhood_code": {
+      "type": "CODE",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "note": ""
+      }
+    },
+    "class": {
+      "type": "CODE",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "note": ""
+      }
+    },
+    "sale_price": {
+      "type": "NUMERIC",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "leading_zeros": true,
+        "note": ""
+      }
+    },
+    "sale_document_num": {
+      "type": "CODE",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "note": ""
+      }
+    },
+    "is_multisale": {
+      "type": "BOOLEAN",
+      "actions": {
+        "true_value": "True",
+        "false_value": "False",
+        "note": "1=True, 0=False"
+      }
+    },
+    "num_parcels_sale": {
+      "type": "NUMERIC",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "leading_zeros": true,
+        "note": ""
+      }
+    },
+    "sale_filter_less_than_10k": {
+      "type": "BOOLEAN",
+      "actions": {
+        "true_value": "True",
+        "false_value": "False",
+        "note": "1=True, 0=False"
+      }
+    },
+    "sale_filter_deed_type": {
+      "type": "BOOLEAN",
+      "actions": {
+        "true_value": "True",
+        "false_value": "False",
+        "note": "1=True, 0=False"
+      }
+    },
+    "row_id": {
+      "type": "CODE",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "note": ""
+      }
+    },
+    "sale_date": {
+      "type": "DATE",
+      "actions": {
+        "input_format": "Auto-detect",
+        "output_format": "DD/MM/YYYY"
+      }
+    },
+    "sale_filter_same_sale_within_365": {
+      "type": "BOOLEAN",
+      "actions": {
+        "true_value": "True",
+        "false_value": "False",
+        "note": "1=True, 0=False"
+      }
+    },
+    "sale_deed_type": {
+      "type": "TEXT",
+      "actions": {
+        "note": ""
+      }
+    },
+    "mydec_deed_type": {
+      "type": "TEXT",
+      "actions": {
+        "note": ""
+      }
+    },
+    "sale_seller_name": {
+      "type": "TEXT",
+      "actions": {
+        "note": ""
+      }
+    },
+    "sale_buyer_name": {
+      "type": "TEXT",
+      "actions": {
+        "note": ""
+      }
+    },
+    "is_mydec_date": {
+      "type": "IGNORE",
+      "actions": {
+        "note": ""
+      }
+    },
+    "sale_type": {
+      "type": "IGNORE",
+      "actions": {
+        "note": ""
+      }
+    }
+  },
+  "02_Assessor_-_Parcel_Addresses_20260205.csv": {
+    "pin": {
+      "type": "CODE",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "note": ""
+      }
+    },
+    "pin10": {
+      "type": "CODE",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "note": ""
+      }
+    },
+    "tax_year": {
+      "type": "NUMERIC",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "leading_zeros": true,
+        "note": ""
+      }
+    },
+    "property_zip": {
+      "type": "CODE",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "note": ""
+      }
+    },
+    "mailing_zip": {
+      "type": "CODE",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "note": ""
+      }
+    },
+    "row_id": {
+      "type": "CODE",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "note": ""
+      }
+    },
+    "mailing_city": {
+      "type": "TEXT",
+      "actions": {
+        "note": ""
+      }
+    },
+    "property_address": {
+      "type": "TEXT",
+      "actions": {
+        "note": ""
+      }
+    },
+    "property_city": {
+      "type": "TEXT",
+      "actions": {
+        "note": ""
+      }
+    },
+    "mailing_name": {
+      "type": "TEXT",
+      "actions": {
+        "note": ""
+      }
+    },
+    "mailing_address": {
+      "type": "TEXT",
+      "actions": {
+        "note": ""
+      }
+    },
+    "mailing_state": {
+      "type": "TEXT",
+      "actions": {
+        "note": ""
+      }
+    },
+    "property_state": {
+      "type": "IGNORE",
+      "actions": {
+        "note": "all same"
+      }
+    }
+  },
+  "03_Assessor_-_Assessed_Values_2023_2025.csv": {
+    "pin": {
+      "type": "CODE",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "note": ""
+      }
+    },
+    "tax_year": {
+      "type": "NUMERIC",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "leading_zeros": true,
+        "note": ""
+      }
+    },
+    "class": {
+      "type": "CODE",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "note": ""
+      }
+    },
+    "township_code": {
+      "type": "CODE",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "note": ""
+      }
+    },
+    "neighborhood_code": {
+      "type": "CODE",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "note": ""
+      }
+    },
+    "mailed_bldg": {
+      "type": "NUMERIC",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "leading_zeros": true,
+        "note": ""
+      }
+    },
+    "mailed_land": {
+      "type": "NUMERIC",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "leading_zeros": true,
+        "note": ""
+      }
+    },
+    "mailed_tot": {
+      "type": "NUMERIC",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "leading_zeros": true,
+        "note": ""
+      }
+    },
+    "mailed_hie": {
+      "type": "NUMERIC",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "leading_zeros": true,
+        "note": ""
+      }
+    },
+    "certified_bldg": {
+      "type": "NUMERIC",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "leading_zeros": true,
+        "note": ""
+      }
+    },
+    "certified_land": {
+      "type": "NUMERIC",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "leading_zeros": true,
+        "note": ""
+      }
+    },
+    "certified_tot": {
+      "type": "NUMERIC",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "leading_zeros": true,
+        "note": ""
+      }
+    },
+    "certified_hie": {
+      "type": "NUMERIC",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "leading_zeros": true,
+        "note": ""
+      }
+    },
+    "board_bldg": {
+      "type": "NUMERIC",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "leading_zeros": true,
+        "note": ""
+      }
+    },
+    "board_land": {
+      "type": "NUMERIC",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "leading_zeros": true,
+        "note": ""
+      }
+    },
+    "board_tot": {
+      "type": "NUMERIC",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "leading_zeros": true,
+        "note": ""
+      }
+    },
+    "board_hie": {
+      "type": "NUMERIC",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "leading_zeros": true,
+        "note": ""
+      }
+    },
+    "row_id": {
+      "type": "CODE",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "note": ""
+      }
+    },
+    "township_name": {
+      "type": "TEXT",
+      "actions": {
+        "note": ""
+      }
+    }
+  },
+  "04_Assessor_-_Single_and_Multi-Family_Improvement_Characteristics_20260205_websiteDL.csv": {
+    "pin": {
+      "type": "CODE",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "note": ""
+      }
+    },
+    "tax_year": {
+      "type": "NUMERIC",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "leading_zeros": true,
+        "note": ""
+      }
+    },
+    "card_num": {
+      "type": "CODE",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "note": ""
+      }
+    },
+    "class": {
+      "type": "CODE",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "note": ""
+      }
+    },
+    "township_code": {
+      "type": "CODE",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "note": ""
+      }
+    },
+    "proration_key_pin": {
+      "type": "CODE",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "note": ""
+      }
+    },
+    "pin_proration_rate": {
+      "type": "NUMERIC",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": false,
+        "leading_zeros": true,
+        "note": ""
+      }
+    },
+    "card_proration_rate": {
+      "type": "NUMERIC",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": false,
+        "leading_zeros": true,
+        "note": ""
+      }
+    },
+    "pin_is_multicard": {
+      "type": "BOOLEAN",
+      "actions": {
+        "true_value": "True",
+        "false_value": "False",
+        "note": "1=True, 0=False"
+      }
+    },
+    "pin_num_cards": {
+      "type": "NUMERIC",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "leading_zeros": true,
+        "note": ""
+      }
+    },
+    "pin_num_landlines": {
+      "type": "NUMERIC",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "leading_zeros": true,
+        "note": ""
+      }
+    },
+    "year_built": {
+      "type": "NUMERIC",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "leading_zeros": true,
+        "note": ""
+      }
+    },
+    "building_sqft": {
+      "type": "NUMERIC",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "leading_zeros": true,
+        "note": ""
+      }
+    },
+    "land_sqft": {
+      "type": "NUMERIC",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "leading_zeros": true,
+        "note": ""
+      }
+    },
+    "num_bedrooms": {
+      "type": "NUMERIC",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "leading_zeros": true,
+        "note": ""
+      }
+    },
+    "num_rooms": {
+      "type": "NUMERIC",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "leading_zeros": true,
+        "note": ""
+      }
+    },
+    "num_full_baths": {
+      "type": "NUMERIC",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "leading_zeros": true,
+        "note": ""
+      }
+    },
+    "num_half_baths": {
+      "type": "NUMERIC",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "leading_zeros": true,
+        "note": ""
+      }
+    },
+    "num_fireplaces": {
+      "type": "NUMERIC",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "leading_zeros": true,
+        "note": ""
+      }
+    },
+    "garage_attached": {
+      "type": "BOOLEAN",
+      "actions": {
+        "true_value": "Yes",
+        "false_value": "No",
+        "note": "1=Yes, 0=No"
+      }
+    },
+    "garage_area_included": {
+      "type": "BOOLEAN",
+      "actions": {
+        "true_value": "Yes",
+        "false_value": "No",
+        "note": "1=Yes, 0=No"
+      }
+    },
+    "num_commercial_units": {
+      "type": "NUMERIC",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "leading_zeros": true,
+        "note": ""
+      }
+    },
+    "row_id": {
+      "type": "CODE",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": true,
+        "note": ""
+      }
+    },
+    "pin_is_multiland": {
+      "type": "BOOLEAN",
+      "actions": {
+        "true_value": "True",
+        "false_value": "False",
+        "note": "1=True, 0=False"
+      }
+    },
+    "garage_size": {
+      "type": "NUMERIC",
+      "actions": {
+        "nonnumeric": true,
+        "decimal": false,
+        "leading_zeros": true,
+        "note": "Size in number of cars"
+      }
+    },
+    "attic_type": {
+      "type": "BOOLEAN",
+      "actions": {
+        "true_value": "Full",
+        "false_value": "Partial",
+        "note": "1=Full, 0=Partial"
+      }
+    },
+    "single_v_multi_family": {
+      "type": "BOOLEAN",
+      "actions": {
+        "true_value": "Multi-Family",
+        "false_value": "Single-Family",
+        "note": "1=Multi-Family, 0=Single-Family"
+      }
+    },
+    "central_air": {
+      "type": "BOOLEAN",
+      "actions": {
+        "true_value": "Central A/C",
+        "false_value": "No Central A/C",
+        "note": "1=Central A/C, 0=No Central A/C"
+      }
+    },
+    "design_plan": {
+      "type": "BOOLEAN",
+      "actions": {
+        "true_value": "Architect",
+        "false_value": "Stock Plan",
+        "note": "1=Stock Plan, 0=Architect"
+      }
+    },
+    "cdu": {
+      "type": "TEXT",
+      "actions": {
+        "note": ""
+      }
+    },
+    "type_of_residence": {
+      "type": "TEXT",
+      "actions": {
+        "note": ""
+      }
+    },
+    "construction_quality": {
+      "type": "TEXT",
+      "actions": {
+        "note": ""
+      }
+    },
+    "num_apartments": {
+      "type": "TEXT",
+      "actions": {
+        "note": ""
+      }
+    },
+    "attic_finish": {
+      "type": "TEXT",
+      "actions": {
+        "note": ""
+      }
+    },
+    "garage_ext_wall_material": {
+      "type": "TEXT",
+      "actions": {
+        "note": ""
+      }
+    },
+    "basement_type": {
+      "type": "TEXT",
+      "actions": {
+        "note": ""
+      }
+    },
+    "ext_wall_material": {
+      "type": "TEXT",
+      "actions": {
+        "note": ""
+      }
+    },
+    "central_heating": {
+      "type": "TEXT",
+      "actions": {
+        "note": ""
+      }
+    },
+    "repair_condition": {
+      "type": "TEXT",
+      "actions": {
+        "note": ""
+      }
+    },
+    "basement_finish": {
+      "type": "TEXT",
+      "actions": {
+        "note": ""
+      }
+    },
+    "roof_material": {
+      "type": "TEXT",
+      "actions": {
+        "note": ""
+      }
+    },
+    "site_desirability": {
+      "type": "TEXT",
+      "actions": {
+        "note": ""
+      }
+    },
+    "renovation": {
+      "type": "IGNORE",
+      "actions": {
+        "note": ""
+      }
+    },
+    "porch": {
+      "type": "TEXT",
+      "actions": {
+        "note": ""
+      }
+    }
+  }
+}

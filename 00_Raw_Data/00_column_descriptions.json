@@ -1,0 +1,39 @@
+{
+  "01_Assessor_-_Parcel_Sales_2023_2025.csv": {
+    "pin": "Parcel Identification Number (PIN)",
+    "year": "Year",
+    "township_code": "Township code",
+    "neighborhood_code": "Assessor neighborhood code, first two digits are township, last three are neighborhood",
+    "class": "Property class",
+    "sale_date": "Sale date (recorded, not executed)",
+    "is_mydec_date": "Indicates whether the sale date has been overwritten with a more precise value from IDOR (Illinois Department of Revenue). In the past the Assessor's ingest process truncated sale dates to the first of the month. Not all sales can be updated with dates from IDOR. ",
+    "sale_price": "Sale price",
+    "sale_document_num": "Sale document number. Corresponds to Clerk's document number",
+    "sale_deed_type": "Sale deed type",
+    "mydec_deed_type": "Deed type from MyDec, more granular than CCAO deed type",
+    "sale_seller_name": "Sale seller name",
+    "is_multisale": "Indicates whether a parcel was sold individually or as part of a larger group of PINs  (1=False, 0=True)",
+    "num_parcels_sale": "The number of parcels that were part of the sale",
+    "sale_buyer_name": "Sale buyer name",
+    "sale_type": "Sale type",
+    "sale_filter_same_sale_within_365": "Remove sale with the same value (for the same PIN) within 365 days  (1=False, 0=True)",
+    "sale_filter_less_than_10k": "Indicator for whether sale is less than $10K FMW  (1=False, 0=True)",
+    "sale_filter_deed_type": "Indicator for quit claim, executor, beneficiary and missing deed types  (1=False, 0=True)",
+    "row_id": "Unique row key for API"
+  },
+  "02_Assessor_-_Parcel_Addresses_20260205.csv": {
+    "pin": "Parcel Identification Number (PIN)",
+    "pin10": "Parcel Identification Number (10-digit)",
+    "tax_year": "Tax year",
+    "property_address": "Property street address",
+    "property_city": "Property city",
+    "property_state": "Property state",
+    "property_zip": "Property zip code",
+    "mailing_name": "Taxpayer mailing name",
+    "mailing_address": "Taxpayer mailing street address",
+    "mailing_city": "Taxpayer mailing city",
+    "mailing_state": "Taxpayer mailing state",
+    "mailing_zip": "Taxpayer mailing zip code",
+    "row_id": "Unique row key for API"
+  }
+}
