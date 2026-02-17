@@ -128,15 +128,22 @@ def analyze_numeric_float_column(df: pd.DataFrame, col: str) -> Dict[str, Any]:
     max_val = float(non_null.max())
     has_nulls = bool(df[col].isna().any())
     
-    # Determine max decimal places by sampling
+    # Determine max decimal places by checking all non-null values
+    # For large datasets, check if any value has decimals (efficient)
     max_decimals = 0
-    for val in non_null.head(1000):  # Sample first 1000
-        if pd.notna(val):
-            # Convert to string and check decimal places
-            str_val = f"{val:.10f}".rstrip('0').rstrip('.')
-            if '.' in str_val:
-                decimals = len(str_val.split('.')[1])
-                max_decimals = max(max_decimals, decimals)
+    
+    # First, quick check: are all values whole numbers?
+    all_whole = (non_null == non_null.astype(int)).all()
+    
+    if not all_whole:
+        # Some values have decimals - find max decimal places
+        for val in non_null.sample(min(10000, len(non_null))):  # Sample up to 10k for performance
+            if pd.notna(val):
+                # Convert to string and check decimal places
+                str_val = f"{val:.10f}".rstrip('0').rstrip('.')
+                if '.' in str_val:
+                    decimals = len(str_val.split('.')[1])
+                    max_decimals = max(max_decimals, decimals)
     
     # If max_decimals is 0, treat as integer (nullable Int64 that went through CSV)
     if max_decimals == 0:
@@ -206,11 +213,26 @@ def analyze_text_column(df: pd.DataFrame, col: str) -> Dict[str, Any]:
             'reason': 'All NULL values'
         }
     
-    lengths = non_null.str.len()
+    # Filter out empty strings for length analysis
+    non_empty = non_null[non_null.str.len() > 0]
+    
+    if len(non_empty) == 0:
+        return {
+            'postgres_type': 'TEXT',
+            'nullable': True,
+            'min_length': 0,
+            'max_length': 0,
+            'avg_length': 0.0,
+            'reason': 'All empty or NULL values'
+        }
+    
+    lengths = non_empty.str.len()
     min_length = int(lengths.min())
     max_length = int(lengths.max())
     avg_length = float(round(lengths.mean(), 1))
-    has_nulls = bool(df[col].isna().any())
+    
+    # Check for NULLs or empty strings
+    has_nulls = bool(df[col].isna().any() or (df[col].astype(str).str.len() == 0).any())
     
     # Decide VARCHAR vs TEXT
     # Use VARCHAR if max_length is reasonable and consistent

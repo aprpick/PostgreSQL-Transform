@@ -104,7 +104,7 @@ CREATE TABLE assessor_single_and_multi_family_improvement_characteristics_202602
     township_code VARCHAR(5) NOT NULL,
     proration_key_pin VARCHAR(20) NULL,
     pin_proration_rate NUMERIC(6,3) NOT NULL,
-    card_proration_rate NUMERIC(17,3) NULL,
+    card_proration_rate NUMERIC(16,2) NULL,
     cdu VARCHAR(5) NULL,
     pin_is_multicard BOOLEAN NOT NULL,
     pin_num_cards SMALLINT NOT NULL,

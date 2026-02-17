@@ -6,16 +6,10 @@ from datetime import datetime
 
 # --- CONFIGURATION ---
 PROJECT_ROOT = Path(__file__).parent
-
-# INPUTS
-RAW_DATA = PROJECT_ROOT / "00_Raw_Data"                          # Raw CSV files
-SCHEMA_FILE = PROJECT_ROOT / "01.1_PostgreSQL_Schema.json"       # From Script 01
-
-# OUTPUTS
-CLEANED_DATA = PROJECT_ROOT / "02.1_Cleaned_Data"                # Cleaned CSV files
-REPORT_FILE = PROJECT_ROOT / "02.1_Cleaning_Report.md"           # Cleaning report
-
-
+RAW_DATA = PROJECT_ROOT / "00_Raw_Data"
+CLEANED_DATA = PROJECT_ROOT / "02.1_Cleaned_Data"
+SCHEMA_FILE = PROJECT_ROOT / "01.1_PostgreSQL_Schema.json"
+REPORT_FILE = PROJECT_ROOT / "02.1_Cleaning_Report.md"
 
 # Create output directory
 CLEANED_DATA.mkdir(exist_ok=True)
@@ -230,6 +224,11 @@ def main():
         original_rows = len(df)
         print(f"  Loaded {original_rows:,} rows")
         
+        # Strip non-ASCII characters from all text columns
+        # Removes mojibake, smart quotes, and any other invalid characters
+        for col in df.select_dtypes(include=['object']).columns:
+            df[col] = df[col].apply(lambda x: x.encode('ascii', errors='ignore').decode('ascii') if isinstance(x, str) else x)
+        
         # Get column schema
         col_schema = schema[csv_name]
         
@@ -374,9 +373,9 @@ def main():
                     'examples': []
                 }
         
-        # Save cleaned CSV
+        # Save cleaned CSV with UTF-8 encoding
         output_file = CLEANED_DATA / f"Cleaned_{csv_name}"
-        df.to_csv(output_file, index=False)
+        df.to_csv(output_file, index=False, encoding='utf-8')
         print(f"  ✅ Saved: {output_file} ({len(df):,} rows)")
         
         # Add to report
