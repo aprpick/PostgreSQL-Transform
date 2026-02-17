@@ -455,13 +455,13 @@
         "reason": "Max 3 decimal places, range 0.0000 to 1.0000"
       },
       "card_proration_rate": {
-        "postgres_type": "NUMERIC(16,2)",
+        "postgres_type": "NUMERIC(17,3)",
         "nullable": true,
         "min_value": 0.0,
         "max_value": 103610602100.0,
-        "precision": 16,
-        "scale": 2,
-        "reason": "Max 2 decimal places, range 0.0000 to 103610602100.0000"
+        "precision": 17,
+        "scale": 3,
+        "reason": "Max 3 decimal places, range 0.0000 to 103610602100.0000"
       },
       "cdu": {
         "postgres_type": "VARCHAR(5)",

@@ -10,8 +10,10 @@ This pipeline transforms raw CSV files into a PostgreSQL database with optimized
 
 ## Pipeline Flow
 
+![Pipeline Diagram](Flowcharts/POSTGRESSQL_TRANSFORM.drawio.png)
+
 ```
-Raw CSVs → Script 01 (Categorize) → Script 02 (Clean) → Script 03 (Generate Schema) → PostgreSQL
+Raw CSVs → Script 01 (Categorize) → Script 02 (Clean) → Script 03 (Generate Schema) → Script 04 (Load) → PostgreSQL
 ```
 
 ## Project Structure
@@ -23,12 +25,15 @@ PostgreSQL_Transform/
 ├── 01_PostgreSQL_Schema_Categorizer.py  # Script 01: Categorize columns (Streamlit)
 ├── 02_Data_Precleaning.py          # Script 02: Clean data
 ├── 03_PostgreSQL_Schema_Generator.py    # Script 03: Generate PostgreSQL schema
+├── 04_PostgreSQL_Loader.py         # Script 04: Load into PostgreSQL
+├── 00_Run_Pipeline.py              # Runs Scripts 02 → 03 → 04 automatically
 ├── 01.1_PostgreSQL_Schema.json     # OUTPUT: Column categorization
 ├── 02.1_Cleaned_Data/              # OUTPUT: Cleaned CSV files
 ├── 02.1_Cleaning_Report.md         # OUTPUT: Cleaning report
 ├── 03.1_PostgreSQL_Schema.json     # OUTPUT: PostgreSQL schema details
 ├── 03.1_PostgreSQL_DDL.sql         # OUTPUT: CREATE TABLE statements
-└── 03.1_Optimization_Report.md     # OUTPUT: Schema optimization report
+├── 03.1_Optimization_Report.md     # OUTPUT: Schema optimization report
+└── 05_Pipeline_Run_Report.md       # OUTPUT: Pipeline run log
 ```
 
 ## Requirements

@@ -2,7 +2,12 @@ import pandas as pd
 from pathlib import Path
 import json
 import re
+import sys
 from datetime import datetime
+
+# Fix emoji/unicode output on Windows
+sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+sys.stderr.reconfigure(encoding='utf-8', errors='replace')
 
 # --- CONFIGURATION ---
 PROJECT_ROOT = Path(__file__).parent

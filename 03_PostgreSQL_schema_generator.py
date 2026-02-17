@@ -5,7 +5,12 @@ Analyzes cleaned CSVs and generates optimized PostgreSQL schema with DDL
 
 import pandas as pd
 import json
+import sys
 from pathlib import Path
+
+# Fix emoji/unicode output on Windows
+sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+sys.stderr.reconfigure(encoding='utf-8', errors='replace')
 from datetime import datetime
 import math
 from typing import Dict, Any, Tuple
