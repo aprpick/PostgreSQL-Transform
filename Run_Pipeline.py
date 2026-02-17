@@ -96,7 +96,8 @@ def generate_report(results, total_start):
     for r in results:
         lines.append(f"### {'✅' if r['success'] else '❌'} {r['script']}")
         lines.append("")
-        lines.append(f"- **Status:** {'Success' if r['success'] else f'Failed (return code {r[\"returncode\"]})'}")
+        status_str = 'Success' if r['success'] else f"Failed (return code {r['returncode']})"
+        lines.append(f"- **Status:** {status_str}")
         lines.append(f"- **Start Time:** {r['start_time'].strftime('%H:%M:%S')}")
         lines.append(f"- **Duration:** {r['elapsed']}s")
         lines.append("")
